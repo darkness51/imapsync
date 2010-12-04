@@ -38,8 +38,8 @@ host2 = "192.168.15.5"
 
 # Leemos el archivo de la lista de usuarios y ejecutamos imapsync por cada uno de ellos
 for line in userList.readlines():
-    imapsync = Popen(command + args % (host1, line.split(" ")[0], line.split(" ")[1].rstrip('\n'),
-        host2, line.split(" ")[0], line.split(" ")[1].rstrip('\n')), stdout=PIPE, shell=True)
+    imapsync = Popen(command + args % (host1, line.split(" ")[0], line.split(" ")[1],
+        host2, line.split(" ")[2], line.split(" ")[3].rstrip('\n')), stdout=PIPE, shell=True)
     print '%s --- Sincronizando la cuenta "%s"...' % (strftime("%d-%m-%Y %H:%M:%S"), (line.split(" ")[0]))
 
     # Si el log está habilitado, lo escribimos en un archivo
