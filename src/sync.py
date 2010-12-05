@@ -30,11 +30,20 @@ except:
 # Path del ejecutable de imapsync
 command = "/usr/bin/imapsync"
 # Argumentos de imapsync
-args = " --host1 %s --user1 %s --password1 %s --host2 %s --user2 %s --password2 %s --subscribed --subscribe"
+args = " --syncinternaldates --useheader 'Message-Id' --host1 %s --port1 993 --user1 %s --password1 %s --ssl1 \
+        --host2 %s --port2 993 --user2 %s --password2 %s --ssl2 --authmech1 LOGIN --authmech2 LOGIN --split1 200 --split2 200 \
+        --nofoldersizes --skipsize --exclude 'Drafts|Trash|Spam|Sent'"
+        
+args2 = " --syncinternaldates --useheader 'Message-Id' --host1 %s --port1 993 --user1 %s --password1 %s --ssl1 \
+        --host2 %s --port2 993 --user2 %s --password2 %s --ssl2 --noauthmd5 --split1 200 --split2 200 --nofoldersizes --skipsize \
+        --folder 'Inbox/Sent' --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Sent/Sent Mail/' \
+        --folder \"Inbox/Spam\" --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Spam/Spam/' \
+        --folder \"Inbox/Trash\" --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Trash/Trash/' \
+        --folder \"Inbox/Drafts\" --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Drafts/Drafts/'"
 # IP servidor IMAP viejo
-host1 = "192.168.15.1"
+host1 = "imap.googlemail.com"
 # IP servidor IMAP nuevo
-host2 = "192.168.15.5"
+host2 = "imap.googlemail.com"
 
 # Leemos el archivo de la lista de usuarios y ejecutamos imapsync por cada uno de ellos
 for line in userList.readlines():
