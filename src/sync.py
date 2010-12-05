@@ -32,10 +32,10 @@ command = "/usr/bin/imapsync"
 # Argumentos de imapsync
 args = " --syncinternaldates --useheader 'Message-Id' --host1 %s --port1 993 --user1 %s --password1 %s --ssl1 \
         --host2 %s --port2 993 --user2 %s --password2 %s --ssl2 --authmech1 LOGIN --authmech2 LOGIN --split1 200 --split2 200 \
-        --nofoldersizes --skipsize --exclude 'Drafts|Trash|Spam|Sent'"
+        --nofoldersizes --skipsize --allowsizemismatch --exclude 'Drafts|Trash|Spam|Sent'"
         
 args2 = " --syncinternaldates --useheader 'Message-Id' --host1 %s --port1 993 --user1 %s --password1 %s --ssl1 \
-        --host2 %s --port2 993 --user2 %s --password2 %s --ssl2 --noauthmd5 --split1 200 --split2 200 --nofoldersizes --skipsize \
+        --host2 %s --port2 993 --user2 %s --password2 %s --ssl2 --noauthmd5 --split1 200 --split2 200 --nofoldersizes --skipsize --allowsizemismatch \
         --folder 'Inbox/Sent' --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Sent/Sent Mail/' \
         --folder \"Inbox/Spam\" --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Spam/Spam/' \
         --folder \"Inbox/Trash\" --prefix2 '[Gmail]/' --regextrans2 's/Inbox\/Trash/Trash/' \
