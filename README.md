@@ -8,4 +8,4 @@ Algunas de las cosas que se pueden hacer con el son las siguientes:
 - Sincroniza correctamente cuentas de gmail.
 - Permite syncronizar entre distintas cuentas imap.
 
-Proyecto basado en el script de [http://artistic.lnxteam.org/?p=231](Gustavo Díaz)
+Proyecto basado en el script de [Gustavo Díaz](http://artistic.lnxteam.org/?p=231)
