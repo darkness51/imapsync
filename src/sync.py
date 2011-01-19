@@ -66,13 +66,13 @@ for line in userList.readlines():
 for line in userList.readlines():
     imapsync = Popen(command + args2 % (host1, line.split(" ")[0], line.split(" ")[1],
         host2, line.split(" ")[2], line.split(" ")[3].rstrip('\n')), stdout=PIPE, shell=True)
-    print '%s --- Sincronizando la cuenta "%s"...' % (strftime("%d-%m-%Y %H:%M:%S"), (line.split(" ")[0]))
+    print '%s --- Sincronizando carpetas especiales en la cuenta "%s"...' % (strftime("%d-%m-%Y %H:%M:%S"), (line.split(" ")[0]))
 
     # Si el log está habilitado, lo escribimos en un archivo
     if log:
         stdout = imapsync.stdout.read()
         logFile = open("imapsync.log", "a")
-        logFile.write('%s --- Sincronizando la cuenta "%s"... \n\n %s \n\n' % (strftime("%d-%m-%Y %H:%M:%S"),
+        logFile.write('%s --- Sincronizando carpetas especiales en la cuenta la cuenta "%s"... \n\n %s \n\n' % (strftime("%d-%m-%Y %H:%M:%S"),
             (line.split(" ")[0]), stdout))
         logFile.close()
 
