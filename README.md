@@ -9,6 +9,7 @@ Algunas de las cosas que se pueden hacer con el son las siguientes:
 - El script funciona principalmente para sincronizar cuentas de GMAIL y Google APPS.
 - De momento, tanto el servidor de origen como de destino, deben de soportar el metodo de autenticación LOGIN.
 - Si no se especifican los servidores, por defecto toma los de google mail.googlemail.com.
+- Agregada la posibilidad de seleccionar las carpetas que se desean sincronizar.
 
 uso:
     python imapsync.py -h1 mail.googlemail.com -h2 mail.googlemail.com
