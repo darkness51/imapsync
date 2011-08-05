@@ -112,5 +112,5 @@ def main():
     parser.add_option("-sa", "--sincronize-all", dest="all_folders", help="Especifica si desea sincronizar spam, borradores, enviados y la papelera", action="store_true", default=False)
     
     (options, args) = parser.parse_args()
-    main(options)
+    sync(options)
     
